@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="http://unpkg.com/a11y-slider@latest/dist/a11y-slider.css" />
+    <script src="http://unpkg.com/a11y-slider@latest/dist/a11y-slider.js"></script>
+    <title>Document</title>
+</head>
+<body>
+   
+    <style>
+        .slider {
+          display: flex;
+        }
+      
+        .slider > * {
+          width: 100%;
+          flex: 0 0 auto;
+          list-style: none;
+          border: 2px solid black;
+        }
+      </style>
+      
+      <ul class="slider">
+        <li>
+            <img src="images/avatar-ali.png" alt="">
+            <h2>Aliana</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo atque ullam nobis doloremque mollitia. Excepturi nam possimus maiores autem doloribus.
+            </p>
+        
+        </li>
+        <li><img src="images/avatar-anisha.png" alt="">
+            <h2>Aliana</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo atque ullam nobis doloremque mollitia. Excepturi nam possimus maiores autem doloribus.
+        </li>
+        <li><img src="images/avatar-richard.png" alt="">
+            <h2>Aliana</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo atque ullam nobis doloremque mollitia. Excepturi nam possimus maiores autem doloribus.
+        </li>
+        <li><img src="images/avatar-shanai.png" alt="">
+            <h2>Aliana</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo atque ullam nobis doloremque mollitia. Excepturi nam possimus maiores autem doloribus.
+        </li>
+      </ul>
+      
+      <script>
+        const slider = new A11YSlider(document.querySelector('.slider'), {
+          adaptiveHeight: true,
+          dots: false
+        });
+      </script>
+</body>
+</html>

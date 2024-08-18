@@ -1,0 +1,1035 @@
+/* ===================== var declaration like font color , style  etc starts here====================== */
+:root {
+  --clr-accent-500: hsl(12, 60%, 45%);
+  --clr-accent-400: hsl(12, 88%, 59%);
+  --clr-accent-300: hsl(12, 88%, 75%);
+  --clr-accent-100: hsl(13, 100%, 96%);
+
+  --clr-primary-400: hsl(228, 39%, 23%);
+
+  --clr-neutral-900: hsl(232, 12%, 13%);
+  --clr-neutral-100: hsl(0 0% 100%);
+  --clr-neutral-200: hsl(0 0% 97%);
+  --clr-pureblack: hsl(232 0% 80%);
+
+  --ff-primary: "Be Vietnam Pro", sans-serif;
+
+  --ff-body: var(--ff-primary);
+  --ff-heading: var(--ff-primary);
+
+  --fw-regular: 400;
+  --fw-semi-bold: 500;
+  --fw-bold: 700;
+
+  --fs-300: 0.8125rem;
+  --fs-400: 0.875rem;
+  --fs-500: 0.9375rem;
+  --fs-600: 1rem;
+  --fs-700: 1.875rem;
+  --fs-800: 2.5rem;
+  --fs-900: 3.5rem;
+
+  --fs-body: var(--fs-400);
+  --fs-primary-heading: var(--fs-800);
+  --fs-secondary-heading: var(--fs-700);
+  --fs-nav: var(--fs-500);
+  --fs-button: var(--fs-300);
+
+  --size-100: 0.25rem;
+  --size-200: 0.5rem;
+  --size-300: 0.75rem;
+  --size-400: 1rem;
+  --size-500: 1.5rem;
+  --size-600: 2rem;
+  --size-700: 3rem;
+  --size-800: 4rem;
+  --size-900: 5rem;
+}
+
+/* ==================== Variable declaration ends here============================ */
+
+@media (min-width: 50em) {
+  :root {
+    --fs-body: var(--fs-500);
+    --fs-primary-heading: var(--fs-900);
+    --fs-secondary-heading: var(--fs-800);
+    --fs-nav: var(--fs-300);
+  }
+}
+
+/*   CSS Reset code starts here ===============================   */
+  /* Box sizing rulerrrrrrrrrrrrrrrrrrrrexdzsedrfedcd j;\s */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin */
+* {
+  margin: 0;
+  padding: 0;
+  font: inherit;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role="list"],
+ol[role="list"] {
+  list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+/* Set core body defaults */
+body {
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture,
+svg {
+  max-width: 100%;
+  display: block;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* ============================== CSS Reset Ends here ======================================= */
+
+@media (min-width: 50em) {
+  .even-columns {
+    grid-auto-flow: column;
+    grid-auto-columns: 1fr;
+  }
+}
+
+/* general styling */
+
+body {
+  font-size: var(--fs-body);
+  font-family: var(--ff-body);
+  color: var(--clr-primary-400);
+}
+
+/* ========================== button classes starts here============================*/
+
+.button {
+  display: inline-flex;
+  cursor: pointer;
+  text-decoration: none;
+  border: 0;
+  border-radius: 100vmax;
+  padding: 1.25em 2.5em;
+  font-weight: var(--fw-bold);
+  font-size: var(--fs-button);
+  line-height: 1;
+  color: var(--clr-neutral-100);
+  background-color: var(--clr-accent-400);
+  box-shadow: 0 1.125em 1em -1em var(--clr-accent-500);
+}
+
+.button[data-type="inverted"] {
+  background-color: var(--clr-neutral-100);
+  color: var(--clr-accent-400);
+}
+
+.button[data-shadow='none'] {
+  box-shadow: none;
+}
+
+.button:hover,
+.button:focus-visible {
+  background-color: var(--clr-accent-300);
+  /* border: 2px solid red; */
+}
+
+.button[data-type="inverted"]:hover,
+.button[data-type="inverted"]:focus-visible {
+  background-color: var(--clr-neutral-100);
+  color: var(--clr-accent-300);
+}
+/* =========================== button classes ends here================================= */
+/* navigation */
+
+.primary-header {
+  padding-top: var(--size-700);
+  display: flex;
+
+}
+
+.nav-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-list {
+
+  /* nav-list class for general size */
+
+  display: flex;
+  flex-direction: row;
+  gap: clamp(var(--size-500),5vw,var(--size-700));
+  font-weight: var(--fw-semi-bold);
+  font-size: var(--fs-nav);
+  list-style: none;
+  margin-top: 1rem;
+  padding: 2rem 0rem;
+  /* font-weight: var(--fw-bold); */
+  /* border: 2px solid red; */
+
+}
+
+.nav-list a {
+
+  list-style: none;
+  text-decoration: none;
+
+}
+
+.primary-navigation {
+  display: flex;
+  position: relative;
+
+}
+
+/* cta */
+
+.cta {
+  position: relative;
+  isolation: isolate;
+  text-align: center;
+  border: 2px solid brown;
+}
+
+@media(min-width:50em) {
+
+  .cta {
+    text-align: left;
+  }
+}
+
+.cta::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  background-image: url("images/bg-tablet-pattern.svg"),
+    url("images/bg-tablet-pattern.svg");
+  opacity: 0.1;
+  background-repeat: no-repeat;
+  background-position: -15rem -5rem, 80rem -42rem;
+}
+
+.mobile-nav-toggle {
+  display: none;
+}
+
+.icon-hamburger {
+  display: none;
+}
+
+/* ================================================================== */
+/* Setup media query for navigation bar in mobile view */
+/* ===================================================================== */
+
+@media (max-width: 50em) {
+  .primary-navigation {
+    display: none;
+    position: fixed;
+    padding: var(--size-700);
+    inset: 7rem var(--size-400) auto;
+    max-width: 32rem;
+    margin-left: auto;
+    background: var(--clr-neutral-100);
+    border-radius: var(--size-100);
+    box-shadow: 0 0 0.75em rgb(0, 0, 0, 0.05);
+  }
+
+  .primary-navigation[data-visible] {
+    display: block;
+    cursor: pointer;
+    background: var(--clr-neutral-100);
+    position: fixed;
+    padding: 0.5rem;
+    color: var(--clr-accent-100);
+    font-weight: var(--fw-bold);
+    z-index: 1;
+
+  }
+
+  .copyright-text[data-visible]{
+    display: none;
+  }
+
+  .nav-list {
+    /* inside media query */
+    display: flex;
+    flex-direction: column;
+    gap: var(--size-600);
+    text-align: center;
+    font-weight: var(--fw-bold);
+    
+    }
+
+  .nav-list a {
+    text-decoration: none;
+    color: var(--clr-primary-400);
+  }
+
+  .nav-list a:hover,
+  .nav-list a:focus {
+    color: var(--clr-accent-400)
+  }
+
+  /* .primary-navigation[data-visible]{
+    display: block;
+  } */
+
+  .mobile-nav-toggle {
+    display: block;
+    position: fixed;
+    top: var(--size-600);
+    right: var(--size-400);
+    cursor: pointer;
+    background: transparent !important;
+    border: 0;
+    padding: 0.5em;
+    
+    /* border: 2px; */
+
+  }
+  .primary-header[data-overlay]::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    /* height: 100vh; */
+    background-image: linear-gradient(rgb(0 0 0 / 0), rgb(0 0 0 / 0.8));
+  }
+
+  .icon-hamburger {
+    display: block;
+
+  }
+  .display-sm-none {
+    display: none;
+  }
+}
+
+/* ======================================================================= */
+/* media query for mobile navigation menu ends here */
+/* ========================================================================== */
+
+
+.mobile-nav-toggle .icon-close {
+  display: none;
+}
+
+
+/* numbered items */
+
+.numbered-items {
+  counter-reset: count;
+  width: fit-content;
+  margin-inline: auto;
+
+}
+
+.numbered-items li {
+  counter-increment: count;
+  padding-left: 0 !important;
+
+}
+
+.numbered-items li ::before {
+  content: "0" counter(count);
+  background-color: var(--clr-accent-400);
+  color: var(--clr-neutral-400);
+  font-weight: var(--fw-bold);
+  padding: var(--size-100) var(--size-500);
+  border-radius: 3rem;
+  margin-right: 20px;
+ 
+}
+
+.numbered-items ::marker {
+  /* border: 2px solid var(--clr-accent-300); */
+  border: 2px solid red;
+  color: red;
+  border-radius: 10px;
+}
+
+.numbered-items h3 {
+  justify-content: right;
+  border-radius: 100vw 0 0 100vw;
+  height: 27px;
+  margin-left: 40px;
+  gap: 3rem;
+  /* background-color: yellow; */
+  background-color: var(--clr-accent-100);
+}
+
+.numbered-items p {
+  color: var(--clr-primary-400);
+  margin-left: 8rem;
+
+}
+
+/* =============================================================================================== */
+                          /* slider classes starts here */
+/* =============================================================================================== */
+
+.slider {
+  display: flex;
+  list-style: none;
+  gap: var(--size-600);
+  /* border: 2px solid red; */
+  padding: var(--size-900) var(--size-400) var(--size-600) var(--size-600);
+  width: 100%;
+  background-color: var(--clr-neutral-100);
+}
+
+.slider>* {
+  position: relative;
+  flex: 0 0 auto;
+  width: 45%;
+  text-align: center;
+  /* border: 2px solid green; */
+  border-radius: var(--size-200);
+  background-color: var(--clr-neutral-200);
+}
+
+.slider img {
+  position: relative;
+  width: var(--size-800);
+  inset: 0;
+  top: calc(var(--size-800/2));
+  margin-inline: auto;
+  
+  
+  /* top: -25%; */
+}
+
+.slider-content {
+  color: var(--clr-primary-400);
+  border-radius: var(--size-200);
+  background-color: var(--clr-neutral-200);
+  height: auto;
+  /* border: 2px solid pink; */
+
+}
+
+
+
+
+
+/* override the default slider container class */
+
+.a11y-slider-next{
+  
+  content: "";
+  display: inline=flex !important;
+  position: absolute;
+  margin-left: 1rem;
+  padding: 0.5rem 1rem;
+  border-radius: 1rem;
+  justify-self:flex-end;
+}
+.a11y-slider-prev {
+  content: "";
+  
+  display: inline;
+  margin-left: 50rem;
+  padding: 0.5rem;
+  border-radius: 1rem;
+
+}
+
+
+
+.a11y-slider-dots {
+  display: flex;
+  /* margin-block: var(--size-500); */
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  justify-content: center;
+  gap: var(--size-300);
+}
+
+.a11y-slider-dots li {
+  display: block;
+  width: 12px;
+  height: 12px;
+  padding: 0;
+  margin: 0 6px;
+  color: #fff;
+
+}
+
+.a11y-slider-dots li button {
+  display: block;
+  font-size: 0;
+  text-indent: -9999px;
+  border: 1px solid var(--clr-accent-400) !important;
+  width: 100%;
+  height: 100%;
+  border-radius: 100%;
+  background: transparent;
+
+}
+
+
+
+.a11y-slider-dots li button.active {
+
+
+  background-color: var(--clr-accent-400);
+  /* border: 2px solid blue; */
+}
+
+.a11y-slider-container {
+/* border: 2px solid brown; */
+
+  /* background-color: goldenrod;  */
+  padding-top: 1rem;
+}
+
+.hero__image::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  right: 0;
+  top: 0;
+  width: 87%;
+  max-height: 70vh;
+  max-width: 70dvh;
+  aspect-ratio: 1/1.2;
+  background-image: url("images/bg-tablet-pattern.svg");
+  background-repeat: no-repeat;
+  background-position: bottom left;
+}
+
+@media (max-width: 50em) {
+  .image-with-pink-bg {
+    position: relative; 
+    order: 1;
+  }
+
+  
+}
+@media( Max-width: 70em){
+  .image-with-pink-bg {
+
+    margin-top: 15%;
+  margin-right: -40%;
+  width: 100%;
+  height: 70%;
+  border: 2px solid darkgreen;
+    
+    }
+
+    .image-with-pink-bg2{
+      background-position: top left;
+      right: 20%;
+      width: 100%;
+      height: 100%;
+      margin-left: -40%;  
+      border: 2px solid darkgreen;  
+      opacity: 100%; 
+    }
+}
+
+.image-with-pink-bg::before {
+  content: "";
+  position: absolute;
+  background-image: url("images/bg-tablet-pattern.svg");
+  top: 0;
+  right: 0;
+  margin-top: -19%;
+  margin-right: -55%;
+  width: 100%;
+  height: 100%;
+  background-position: bottom left;
+  background-repeat: no-repeat;
+  aspect-ratio: 1;
+  z-index: -1;
+  /* offset-rotate: 1; */
+}
+.image-with-pink-bg2{
+  display: inlie-flex;
+  position: absolute;
+  background-image: url("images/bg-tablet-pattern.svg");
+  background-repeat: no-repeat;
+  aspect-ratio: 1;
+  background-position: top left;
+  left: 0;
+  width: 50%;
+  height: fit-content;
+  margin-left: -24%;
+}
+
+
+@media (min-width: 50em) {
+  .hero__image::before {
+    width: 35%;
+  }
+}
+
+/* ------------------------------------------------------------ */
+/* Slider Content in mobile view / responsive design */
+/* ------------------------------------------------------------- */
+
+
+@media(max-width : 30em) {
+  .slider>* {
+    width: 100%;
+  }
+.slider{
+  scroll-padding-inline: 25px;
+}
+    /* border: 2px solid green; */
+    .para-padding{
+      padding: 0.5rem 0.2rem;
+      }
+   
+}
+
+@media(max-width : 50em) {
+  .slider>* {
+    width: 100%;
+
+  }
+
+  
+
+  .a11y-slider-container {
+    width: 100%;
+    /* border: 2px sold brown; */
+    height: 20rem;
+    /* background-color: blue; */
+    margin-top: 2rem;
+  }
+}
+
+.a11y-slider {
+  margin-top: 1rem;
+  padding-top: 0;
+  margin-left: 1rem;
+  /* border: 2px solid black; */
+  background-color: var(--clr-neutral-100);
+  height: 20rem;
+
+
+}
+
+.center-button
+{
+  margin-left: 10rem;
+ border: 2px solid purple;
+}
+
+/* -------------- Slider responsive code ends here------------------- */
+
+
+
+
+@media(max-width: 50em) {
+  .text-center-sm-only {
+    text-align: center;
+  }
+
+  .text-center p {
+    margin-inline: auto;
+  }
+}
+
+:where(.flow :NOT(:first-child)) {
+  margin-top: var(--flow-spacer, 2em);
+}
+
+
+@media (min-width: 50em) {
+  .display-md-inline-flex {
+    display: inline-flex;
+  }
+
+  
+
+  .justify-self-end-md {
+    justify-self: end;
+  }
+}
+
+.primary-footer {
+  --logo-color: var(--clr-neutral-100);
+
+
+}
+
+.primary-footer-wrapper {
+  display: grid;
+  gap: var(--size-700);
+  
+  grid-template-areas:
+
+    "form"
+    "nav"
+    "logo-social"
+    "copyright-area";
+    
+
+}
+
+@media(min-width: 50em) {
+
+  .primary-footer-wrapper {
+    grid-template-areas: "logo-social nav form copyright-area";
+  }
+  .primary-footer-wrapper>* {
+    margin-inline: auto;
+  }
+
+
+  .primary-footer-logo-social {
+    align-items: flex-start;
+    gap: var(--size-700);
+    justify-content: space-between;
+
+  }
+  
+}
+
+@media(max-width:50em){
+  .copyright-dummy-text{
+    display: flex;
+    color: var(--clr-neutral-100);
+    text-align: center;
+    padding-top: 1rem;
+  }
+
+}
+
+
+.primary-footer-logo-social {
+  grid-area: logo-social;
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: center;
+  gap: var(--size-700);
+  /* border: 2px solid red; */
+}
+
+.primary-footer-nav {
+  grid-area: nav;
+  gap: 0.5rem;
+  /* border: 2px solid blue; */
+  padding: 0;
+
+
+}
+
+.primary-footer-form {
+  grid-area: form;
+  display: grid;
+  justify-content: space-between;
+  /* border: 2px solid white; */
+}
+
+
+.primary-footer-copyright-text{
+  grid-area: "copyright-area";
+  display: grid;
+  position: relative;
+  padding: 0;
+  /* border: 2px solid green; */
+}
+
+@media(max-width: 50em){
+  .primary-footer-copyright-text{
+    display: none;
+  }
+
+  .copyright-dummy-text{
+    display: flex;
+    position: relative;
+
+  }
+ 
+}
+
+
+.footer-nav {
+  columns: 2;
+  gap: clamp(var(--size-400), 15vw, var(--size-900));
+
+}
+
+.footer-nav li {
+
+  /* gap: clamp(var(--size-400), 15vw, var(--size-900)); */
+  padding: 0.5rem;
+}
+
+.primary-footer-form {
+  grid-area: form;
+  display: grid;
+  align-content: space-between;
+}
+
+
+.primary-footer form {
+  display: flex;
+  gap: var(--size-200);
+}
+
+/* if there were more than one input box and we had to apply css on a specific input box then we would have written the code */
+/* like .primary-footer-form input :where[type = "email"] */
+.primary-footer-form input:where([type="email"], [type="text"]) {
+
+  border-radius: 100vw;
+  height: 3rem;
+  /* padding: var(--size-200) var(--size-400); */
+
+}
+
+
+
+/* @media (max-width : 50em) {} */
+
+.footer-nav a {
+  color: var(--clr-neutral-100);
+  text-decoration: none;
+
+}
+
+.footer-nav a:is(:hover, :focus) {
+  color: var(--clr-accent-400);
+}
+
+
+
+.social-list {
+  display: flex;
+  gap: var(--size-600);
+}
+
+.social-icon {
+  width: var(--size-600);
+  height: var(--size-900);
+  aspect-ratio: 1;
+  fill: var(--clr-neutral-100);
+}
+
+
+.social-list a:is(:hover, :focus) {
+  .social-icon {
+    fill: var(--clr-accent-400);
+
+  }
+}
+
+
+
+@media (min-width: 50em) {
+  .social-list {
+    display: flex;
+    gap: var(--size-400);
+  }
+
+  .social-icon {
+    width: --size-400;
+  }
+
+  .copyright-dummy-text{
+    display: none;
+  }
+
+  .para-padding{
+    padding: 1rem 5rem ;
+    border: 5px;
+  }
+}
+
+/* ======================================= */
+/* Utility Classes starts here */
+/* ============================================ */
+
+/* Utility classes */
+
+
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  /* added line */
+
+}
+
+.container {
+  --max-width: 1110px;
+  --container-padding: 1rem;
+  width: min(var(--max-width), 100% - (var(--container-padding) * 2));
+  margin-inline: auto;
+}
+
+.justify-self-end {
+  justify-self: end;
+}
+
+
+.vertical-align-centre {
+  align-items: center;
+}
+
+.flow {
+  gap: 1rem;
+}
+
+.Justify-text-right {
+  text-align: right;
+  margin-left: 20px;
+}
+.text-center {
+  text-align: center;
+  /* align-items: center; */
+  /* justify-content: center; */
+}
+
+.text-center p {
+  margin-inline: auto;
+}
+
+
+.even-columns {
+  display: grid;
+  gap: 1rem;
+}
+
+.text-primary-400 {
+  color: var(--clr-primary-400);
+}
+
+.text-accent-400 {
+  color: var(--clr-accent-400);
+}
+
+.text-accent-100 {
+  color: var(--clr-accent-100);
+}
+
+.text-neutral-100 {
+  color: var(--clr-neutral-100);
+}
+
+.text-neutral-900 {
+  color: var(--clr-neutral-900);
+}
+
+.bg-primary-400 {
+  background-color: var(--clr-primary-400);
+}
+
+.bg-accent-400 {
+  background-color: var(--clr-accent-400);
+}
+
+.bg-accent-100 {
+  background-color: var(--clr-accent-100);
+}
+
+.bg-neutral-100 {
+  background-color: var(--clr-neutral-100);
+}
+
+.bg-neutral-900 {
+  background-color: var(--clr-neutral-900);
+}
+
+.fw-bold {
+  font-weight: var(--fw-bold);
+}
+
+.fw-semi-bold {
+  font-weight: var(--fw-semi-bold);
+}
+
+.fw-regular {
+  font-weight: var(--fw-regular);
+}
+
+.fs-primary-heading {
+  font-size: var(--fs-primary-heading);
+  line-height: 1.1;
+}
+
+.fs-secondary-heading {
+  font-size: var(--fs-secondary-heading);
+  line-height: 1.1;
+}
+
+.fs-300 {
+  font-size: var(--fs-300);
+}
+
+.fs-400 {
+  font-size: var(--fs-400);
+}
+
+.fs-500 {
+  font-size: var(--fs-500);
+}
+
+.fs-600 {
+  font-size: var(--fs-600);
+}
+
+.padding-block-900 {
+  padding-block: var(--size-900);
+}
+
+.padding-block-700 {
+  padding-block: var(--size-700);
+}
+
+.margin-bottom-700 {
+  margin-block-end: var(--size-700);
+}
+
+
+
+/* =============== Utility Classes ends here========================== */
